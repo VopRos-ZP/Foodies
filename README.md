@@ -4,27 +4,27 @@ Foodies &mdash; мобильное приложение для доставки 
 ## Lottie
 Экран загрузки приложения.
 
-![Lottie](readme/lottie.gif)
+<img alt="lottie" style="width: 108px; height: 240px" src="readme/lottie.gif">
 
 ## HorizontalPager
 Удобное распределение блюд по разным категориям.
 
-![Pager](readme/pager.gif)
+<img alt="pager" style="width: 108px; height: 240px" src="readme/pager.gif">
 
 ## Поиск
 Найдите свое блюдо по названию/ингридиентам
 
-![Search](readme/search.gif)
+<img alt="Search" style="width: 108px; height: 240px" src="readme/search.gif">
 
 ## ModalBottomSheet
 Подоберите блюда на свой вкус **:)**
 
-![BottomSheet](readme/sheet.gif)
+<img alt="sheet" style="width: 108px; height: 240px" src="readme/sheet.gif">
 
 ## Корзина
 Добавляйте, удаляйте продукты
 
-![Basket](readme/basket.gif)
+<img alt="basket" style="width: 108px; height: 240px" src="readme/basket.gif">
 
 ### Значки
 Доступны 3 вида значков:
