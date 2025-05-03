@@ -1,45 +1,23 @@
 plugins {
-    id("com.android.library")
-    kotlin("android")
-    kotlin(serialization)
+    id("java-library")
+    alias(libs.plugins.jetbrains.kotlin.jvm)
 }
 
-android {
-    namespace = "com.vopros.foodies.domain"
-    compileSdk = 33
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
 
-    defaultConfig {
-        minSdk = 26
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
     }
 }
 
 dependencies {
-    with(Deps) {
-        implementation(kotlinSerialization)
-    }
-    with(Mockito) {
-        testImplementation(core)
-        testImplementation(kotlin)
-    }
-    testImplementation("junit:junit:4.13.2")
+    /** DI **/
+    api(platform(libs.koin.bom))
+    api(libs.koin.core)
+    /** Coroutines **/
+    api(libs.kotlinx.coroutines.core)
 }

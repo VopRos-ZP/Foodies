@@ -1,11 +1,9 @@
 plugins {
-    id(Hilt.plugin).version(Hilt.version).apply(false)
-    kotlin("jvm").version(kotlinVersion).apply(false)
-    id(library).version("7.4.2").apply(false)
-    kotlin(android).version(kotlinVersion).apply(false)
-    kotlin(serialization).version(kotlinVersion).apply(false)
-}
-
-tasks.register("clean", Delete::class) {
-    delete(rootProject.buildDir)
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.kotlin.compose) apply false
+    alias(libs.plugins.kotlin.serialization) apply false
+    alias(libs.plugins.jetbrains.kotlin.jvm) apply false
+    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.devtools.ksp) apply false
 }

@@ -4,7 +4,7 @@ pluginManagement {
         google()
         mavenCentral()
         // kotlin-serialization
-        maven(url = "https://kotlin.bintray.com/kotlinx")
+        //maven(url = "https://kotlin.bintray.com/kotlinx")
         // Lottie
         maven(url = "https://oss.sonatype.org/content/repositories/snapshots/")
     }
@@ -16,7 +16,9 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
 rootProject.name = "Foodies"
 include(":app")
 include(":domain")
 include(":data")
+include(":presentation")

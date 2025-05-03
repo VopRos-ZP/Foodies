@@ -1,16 +1,16 @@
 plugins {
-    id("com.android.library")
-    kotlin("android")
-    kotlin(serialization)
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.devtools.ksp)
 }
 
 android {
-    namespace = "com.vopros.foodies.data"
-    compileSdk = 33
+    namespace = "ru.vopros.foodies.data"
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 26
-        targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -30,13 +30,19 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = "${JavaVersion.VERSION_11}"
     }
 }
 
 dependencies {
-    implementation(project(":domain"))
-    with(Deps) {
-        implementation(kotlinSerialization)
-    }
+    api(project(":domain"))
+    /** JSON **/
+    implementation(libs.kotlinx.serialization)
+    /** Room **/
+    implementation(libs.room.runtime)
+    ksp(libs.room.compiler)
+    /** Test **/
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 }
