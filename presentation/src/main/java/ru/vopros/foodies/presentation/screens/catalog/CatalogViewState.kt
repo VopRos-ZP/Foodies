@@ -6,6 +6,7 @@ import ru.vopros.foodies.domain.model.Tag
 
 data class CatalogViewState(
     val tags: List<Tag> = emptyList(),
+    val checkedTags: List<Tag> = emptyList(),
     val categories: List<Category> = emptyList(),
     val products: List<Product> = emptyList(),
     val baskets: Map<Int, Int> = emptyMap(),

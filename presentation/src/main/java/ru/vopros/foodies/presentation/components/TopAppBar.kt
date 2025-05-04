@@ -67,9 +67,7 @@ fun BackTopBar(
         contentColor = Color.Black,
         elevation = 16.dp,
         navigationIcon = {
-            IconButton(
-                onClick = onBackClick
-            ) {
+            IconButton(onClick = onBackClick) {
                 Icon(
                     painterResource(R.drawable.left_arrow),
                     contentDescription = "left_arrow",

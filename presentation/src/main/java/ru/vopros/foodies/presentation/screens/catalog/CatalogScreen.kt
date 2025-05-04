@@ -1,6 +1,5 @@
 package ru.vopros.foodies.presentation.screens.catalog
 
-import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -20,7 +19,6 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -35,6 +33,7 @@ import ru.vopros.foodies.domain.RUB
 import ru.vopros.foodies.presentation.R
 import ru.vopros.foodies.presentation.components.BottomBarButton
 import ru.vopros.foodies.presentation.components.DefaultTopBar
+import ru.vopros.foodies.presentation.components.FiltersBottomSheet
 import ru.vopros.foodies.presentation.components.ProductCard
 import ru.vopros.foodies.presentation.components.ScrollableCategoryTabRow
 
@@ -45,10 +44,6 @@ fun CatalogScreen(
     onBasketClick: () -> Unit,
 ) {
     val state by viewModel.collectAsState()
-
-    LaunchedEffect(state.sum) {
-        Log.d("CatalogScreen", "sum -> ${state.sum}")
-    }
 
     val sheetState = rememberModalBottomSheetState(
         initialValue = ModalBottomSheetValue.Hidden,
@@ -61,7 +56,14 @@ fun CatalogScreen(
         sheetState = sheetState,
         sheetShape = RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp),
         scrimColor = MaterialTheme.colors.onSurface.copy(alpha = 0.5f),
-        sheetContent = {},
+        sheetContent = {
+            FiltersBottomSheet(
+                tags = state.tags,
+                checkedTags = state.checkedTags,
+                onTagCheckedChange = {},
+                onCloseSheet = {}
+            )
+        },
     ) {
         Scaffold(
             topBar = {
