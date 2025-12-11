@@ -17,6 +17,7 @@ rootProject.name = "Foodies"
 include(":app")
 include(":core")
 include(":feature:tags")
+include(":core")
 include(":domain")
 include(":data")
 include(":presentation")
