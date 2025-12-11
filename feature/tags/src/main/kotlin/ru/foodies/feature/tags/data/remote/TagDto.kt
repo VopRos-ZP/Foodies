@@ -1,4 +1,4 @@
-package ru.foodies.feature.tags.data.local
+package ru.foodies.feature.tags.data.remote
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

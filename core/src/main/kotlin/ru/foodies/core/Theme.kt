@@ -1,9 +1,11 @@
 package ru.foodies.core
 
+import androidx.compose.material3.LocalMinimumInteractiveComponentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.compositionLocalOf
+import androidx.compose.ui.unit.dp
 
 val LocalColorScheme = compositionLocalOf { lightColors }
 val LocalTypography = compositionLocalOf { Type }
@@ -31,6 +33,7 @@ fun FoodiesTheme(
     CompositionLocalProvider(
         LocalColorScheme provides colorScheme,
         LocalTypography provides type,
+        LocalMinimumInteractiveComponentSize provides 20.dp,
         content = content
     )
 }

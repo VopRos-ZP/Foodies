@@ -1,12 +1,12 @@
-package ru.foodies.feature.tags.data.local
+package ru.foodies.feature.tags.data.remote
 
 import android.content.Context
 import kotlinx.serialization.json.Json
 import ru.foodies.feature.tags.utils.Assets
 
-class AssetLocalTagsDataSource(
+class AssetRemoteTagsDataSource(
     private val context: Context
-) : LocalTagsDataSource {
+) : RemoteTagsDataSource {
 
     override suspend fun getAll(): List<TagDto> {
         val json = context.assets
