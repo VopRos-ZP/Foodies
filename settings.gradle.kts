@@ -3,10 +3,6 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
-        // kotlin-serialization
-        //maven(url = "https://kotlin.bintray.com/kotlinx")
-        // Lottie
-        maven(url = "https://oss.sonatype.org/content/repositories/snapshots/")
     }
 }
 dependencyResolutionManagement {
