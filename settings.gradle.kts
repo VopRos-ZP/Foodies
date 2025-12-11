@@ -15,6 +15,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "Foodies"
 include(":app")
+include(":feature:tags")
 include(":domain")
 include(":data")
 include(":presentation")
